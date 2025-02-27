@@ -14,9 +14,14 @@ const CONNECTMSG = "connected to client!";
 
 const client = net.createConnection({ host: host, port: port }, async () => {
   console.log(CONNECTMSG);
+  let answer = null;
 
-  const message = await rl.question("Enter a message > ");
-  client.write(message);
+  while (!answer) {
+    answer = await rl.question("Enter a message > ");
+    client.write(answer);
+    if (answer === ".exit") rl.close();
+    answer = null;
+  }
 });
 
 client.on("data", (data) => {
