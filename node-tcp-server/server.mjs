@@ -5,9 +5,9 @@ const host = "127.0.0.1";
 
 const server = new net.createServer((socket) => {
   socket.on("data", (data) => {
-    console.log(`Date received: ${data}`);
+    console.log(`Data received: ${data}`);
     // console.log(typeof data);
-    // socket.write(data);
+    socket.write(data.toString().toUpperCase());
     // socket.pipe(socket);
   });
 });
@@ -24,7 +24,7 @@ server.on("connection", (socket) => {
 
 server.on("listening", () => {
   const address = server.address();
-  console.log(`opened server on ${address.address}:${address.port}`);
+  console.log(`Opened server on ${address.address}:${address.port}`);
 });
 
 server.listen(port, host);
