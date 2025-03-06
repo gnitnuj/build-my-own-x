@@ -6,6 +6,16 @@
   - Gemini
   - Tailwind
 
+## Features
+- [x] Real-time chat interface using streaming
+- [x] Integration with Gemini AI
+- [x] Basic UI with Tailwind CSS
+- [ ] Can render Markdown
+- [ ] Can render Code Blocks
+- [ ] Can render Charts/Diagrams using Mermaid.js
+- [ ] Can store chat history (on client)
+- [ ] Is performant when streaming large responses
+
 ## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
