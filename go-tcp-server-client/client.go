@@ -7,7 +7,7 @@ import (
 
 const (
 	HOST = "localhost"
-	PORT = "8080"
+	PORT = "1337"
 	TYPE = "tcp"
 )
 
