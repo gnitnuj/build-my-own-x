@@ -6,45 +6,41 @@ import (
 	"net"
 	"os"
 	"time"
+	"bufio"
+	"strings"
 )
 
 const (
-	HOST = "localhost"
+	// HOST = "localhost"
 	PORT = "1337"
 	TYPE = "tcp"
 )
 
 func main() {
-	listen, err := net.Listen(TYPE, HOST+":"+PORT)
+	listen, err := net.Listen(TYPE, ":"+PORT)
 	if err != nil {
 		log.Fatal(err)
 		os.Exit(1)
 	}
-	// close listener
-	defer listen.Close()
+
+	fmt.Println("Launching server...")
+	conn, _ := listen.Accept()
+
+	// run loop forever (or until ctrl-c)
 	for {
-		conn, err := listen.Accept()
-		if err != nil {
-			log.Fatal(err)
-			os.Exit(1)
-		}
-		go handleRequest(conn)
+		handleRequest(conn)
 	}
 }
 
 func handleRequest(conn net.Conn) {
-	// incoming request
-	buffer := make([]byte, 1024)
-	_, err := conn.Read(buffer)
-	if err != nil {
-		log.Fatal(err)
-	}
+	message, _ := bufio.NewReader(conn).ReadString('\n')
 
-	// write data to response
+	fmt.Print("Message Received:", string(message))
+
 	time := time.Now().Format(time.ANSIC)
-	responseStr := fmt.Sprintf("Your message is: %v. Received time: %v", string(buffer[:]), time)
-	conn.Write([]byte(responseStr))
+    newmessage := strings.ToUpper(message)
 
-	// close conn
-	conn.Close()
+    responseStr := fmt.Sprintf("Your message is: %v. Received time: %v", newmessage, time)
+
+    conn.Write([]byte(responseStr + "\n"))
 }
