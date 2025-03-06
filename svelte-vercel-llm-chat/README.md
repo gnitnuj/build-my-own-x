@@ -6,10 +6,14 @@
   - Gemini
   - Tailwind
 
-## Features
+## Implemented Features
 - [x] Real-time chat interface using streaming
 - [x] Integration with Gemini AI
 - [x] Basic UI with Tailwind CSS
+
+![demo](./demo.gif)
+
+## Future Features
 - [ ] Can render Markdown
 - [ ] Can render Code Blocks
 - [ ] Can render Charts/Diagrams using Mermaid.js
