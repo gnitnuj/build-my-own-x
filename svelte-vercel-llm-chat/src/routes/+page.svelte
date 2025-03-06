@@ -1,7 +1,12 @@
 <script>
     import { useChat } from "@ai-sdk/svelte";
-
+    import Message from "../components/Message.svelte";
+    import ChatInput from "../components/ChatInput.svelte";
+    // TODO: Try out Svelte5 reactive store
     const { input, handleSubmit, messages } = useChat();
+
+    // Note to self: Interesting way to inspect state
+    // $inspect(messages).with(console.trace);
 </script>
 
 <main>
@@ -12,31 +17,12 @@
             <div class="flex-1 overflow-y-auto bg-white p-4">
                 <ul class="space-y-4">
                     {#each $messages as message}
-                        <li
-                            class={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                        >
-                            <div
-                                class={`max-w-[80%] rounded-lg px-4 py-2 ${message.role === "user" ? "bg-blue-500 text-white rounded-br-none" : "bg-gray-200 text-gray-800 rounded-bl-none"}`}
-                            >
-                                {message.role}: {message.content}
-                            </div>
-                        </li>
+                        <Message {message} />
                     {/each}
                 </ul>
             </div>
         </div>
     </div>
-    <form
-        on:submit={handleSubmit}
-        class="flex gap-2 bg-gray-50 border-t border-gray-200 p-3"
-    >
-        <input
-            class="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            bind:value={$input}
-        />
-        <button
-            class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-lg transition-colors"
-            type="submit">Send</button
-        >
-    </form>
+
+    <ChatInput {input} {handleSubmit} />
 </main>
