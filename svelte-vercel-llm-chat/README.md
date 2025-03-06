@@ -4,6 +4,7 @@
   - Svelte
   - Vercel
   - Gemini
+  - Tailwind
 
 ## create-svelte
 
