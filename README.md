@@ -7,6 +7,7 @@ Instead of creating new repositories, the plan is to keep them all in this singl
 ### Done, done
 
 - [monkey-lang-interpreter](https://github.com/gnitnuj/monkey-lang-interpreter)
+- [monkey-lang-compiler](https://github.com/gnitnuj/monkey-lang-compiler)
 - [node-tcp-server-client](https://github.com/gnitnuj/build-my-own-x/tree/main/node-tcp-server-client)
 - [go-tcp-server-client](https://github.com/gnitnuj/build-my-own-x/tree/main/go-tcp-server-client)
 
@@ -18,3 +19,8 @@ Instead of creating new repositories, the plan is to keep them all in this singl
 ### Just getting started
 
 - [one-billion-checkboxes](https://github.com/gnitnuj/build-my-own-x/tree/main/one-billion-checkboxes)
+
+### Ideation Stage
+
+- Replace my current Zapier pipeline with local server + LLM (Gmail -> Income/Expense Data Extraction -> Quickbooks)
+- Training a model to identify when a person does not pick up after their furry friends from video input
