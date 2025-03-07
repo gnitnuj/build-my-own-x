@@ -23,4 +23,6 @@ Instead of creating new repositories, the plan is to keep them all in this singl
 ### Ideation Stage
 
 - Replace my current Zapier pipeline with local server + LLM (Gmail -> Income/Expense Data Extraction -> Quickbooks)
+- Chrome Extension to gamify Google Suite. e.g. Arkanoid in Google Calendar breaking events to unattend meetings
+- Library of silly UI elements. e.g. submit button drops to bottom of view with gravity on mouseover
 - Training a model to identify when a person does not pick up after their furry friends from video input
