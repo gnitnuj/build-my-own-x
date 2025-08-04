@@ -1,0 +1,17 @@
+{
+  "name": "google-cloud-receipt-processing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.8.1",
+  "dependencies": {
+    "googleapis": "^154.1.0",
+    "puppeteer": "^24.15.0"
+  }
+}
