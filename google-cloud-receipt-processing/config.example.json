@@ -1,0 +1,12 @@
+{
+  "serviceAccountKeyPath": "./service-account-key.json",
+  "unprocessedFolderId": "your-unprocessed-folder-id",
+  "processedFolderId": "your-processed-folder-id",
+  "docAi": {
+    "projectId": "your-gcp-project-id",
+    "location": "us",
+    "processorId": "your-processor-id"
+  },
+  "googleSheetId": "your-google-sheet-id",
+  "sheetName": "Sheet1"
+}

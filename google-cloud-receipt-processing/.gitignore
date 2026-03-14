@@ -1,3 +1,8 @@
 node_modules/
 credentials.json
 tokens.json
+service-account-key.json
+config.json
+configFFA.json
+configJLC.json
+.claude/
